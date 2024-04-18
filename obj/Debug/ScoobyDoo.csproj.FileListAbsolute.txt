@@ -1,0 +1,16 @@
+C:\Users\User\Documents\ScoobyDoo\bin\Debug\ScoobyDoo.exe.config
+C:\Users\User\Documents\ScoobyDoo\bin\Debug\ScoobyDoo.exe
+C:\Users\User\Documents\ScoobyDoo\bin\Debug\ScoobyDoo.pdb
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.AssemblyReference.cache
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\MainWindow.g.cs
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\App.g.cs
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo_MarkupCompile.cache
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo_MarkupCompile.lref
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\MainWindow.baml
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.g.resources
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.Properties.Resources.resources
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.GenerateResource.cache
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.exe
+C:\Users\User\Documents\ScoobyDoo\obj\Debug\ScoobyDoo.pdb
