@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:ScoobyDoo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--Shared background between windows-->
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#37946e" Offset="0"/>
+            <GradientStop Color="#6abe30" Offset="0.5"/>
+            <GradientStop Color="#37946e" Offset="1"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>

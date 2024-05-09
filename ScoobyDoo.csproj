@@ -55,6 +55,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CPU.xaml.cs">
+      <DependentUpon>CPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GPU.xaml.cs">
+      <DependentUpon>GPU.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowDialogue.cs" />
+    <Page Include="CPU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GPU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -96,9 +111,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Artwork\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="_ScoobyDoo_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

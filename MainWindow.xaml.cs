@@ -24,5 +24,17 @@ namespace ScoobyDoo
         {
             InitializeComponent();
         }
+
+        private void _CPU_Testing_Click(object sender, RoutedEventArgs e)
+        {
+            //CPU Testing window
+            this.SwitchTo(new CPU());
+        }
+
+        private void _GPU_Testing_Click(object sender, RoutedEventArgs e)
+        {
+            //GPU Testing window
+            this.SwitchTo(new GPU());
+        }
     }
 }
