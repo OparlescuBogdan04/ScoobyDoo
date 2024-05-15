@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo"
         mc:Ignorable="d"
-        Title="ScoobyDoo" Height="450" Width="800">
+        Title="ScoobyDoo" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="{StaticResource BackgroundGradient}">
+
+        <!--Scooby Doo Title Image-->
+        <Image HorizontalAlignment="Center" Height="159" Margin="0,30,0,0" VerticalAlignment="Top" Width="480" Source="/Resources/_ScoobyDooTitle.png"/>
+
         <Button x:Name="_CPU_Testing" Content="CPU Testing" HorizontalAlignment="Center" Margin="0,280,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="_CPU_Testing_Click"/>
         <Button x:Name="_GPU_Testing" Content="Gpu Testing" HorizontalAlignment="Center" Margin="0,320,0,0" VerticalAlignment="Top" Height="20" Width="120" Click="_GPU_Testing_Click"/>
         <!--<Image HorizontalAlignment="Left" Height="183" Margin="260,135,0,0" VerticalAlignment="Top" Width="275" Source="/_ScoobyDoo_Logo.png"/>-->

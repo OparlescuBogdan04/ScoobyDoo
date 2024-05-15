@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo"
         mc:Ignorable="d"
-        Title="GPU Testing" Height="450" Width="800">
+        Title="GPU Testing" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="{StaticResource BackgroundGradient}">
         
     </Grid>

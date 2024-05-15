@@ -55,12 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Clock.cs" />
     <Compile Include="CPU.xaml.cs">
       <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CUDA.cs" />
     <Compile Include="GPU.xaml.cs">
       <DependentUpon>GPU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Threading.cs" />
     <Compile Include="WindowDialogue.cs" />
     <Page Include="CPU.xaml">
       <SubType>Designer</SubType>
@@ -109,8 +112,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Artwork\" />
+    <Resource Include="Resources\_ScoobyDooTitle.png" />
+    <Resource Include="Resources\_ScoobyDoo_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
