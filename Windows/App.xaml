@@ -1,0 +1,25 @@
+﻿<Application x:Class="ScoobyDoo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ScoobyDoo"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!--Shared background between windows-->
+        <LinearGradientBrush x:Key="BackgroundGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#37946e" Offset="0"/>
+            <GradientStop Color="#6abe30" Offset="0.5"/>
+            <GradientStop Color="#37946e" Offset="1"/>
+        </LinearGradientBrush>
+
+
+        <Style x:Key="BackButton" TargetType="Button">
+            <Setter Property="Content" Value="Back" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <!-- Additional styling as needed -->
+            <EventSetter Event="Click" Handler="BackButton_Click" />
+        </Style>
+    </Application.Resources>
+</Application>

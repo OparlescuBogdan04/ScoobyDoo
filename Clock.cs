@@ -9,7 +9,7 @@ namespace ScoobyDoo
     internal class Clock
     {
         //time in ms when the clock was created
-        private int create_time;
+        //private int create_time;
         public Clock() 
         { 
             //set create time

@@ -1,6 +1,8 @@
 ﻿
-FC:\Users\User\Documents\GitHub\ScoobyDoo\App.xaml;;
-FC:\Users\User\Documents\GitHub\ScoobyDoo\CPU.xaml;;
-FC:\Users\User\Documents\GitHub\ScoobyDoo\GPU.xaml;;
-FC:\Users\User\Documents\GitHub\ScoobyDoo\MainWindow.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\App.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\CPU.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\CpuInformation.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\GPU.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\GpuInformation.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\MainWindow.xaml;;
 

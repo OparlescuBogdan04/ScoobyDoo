@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -51,37 +52,52 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <ApplicationDefinition Include="Windows\App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Clock.cs" />
-    <Compile Include="CPU.xaml.cs">
+    <Compile Include="Threading.cs" />
+    <Compile Include="Windows\CPU.xaml.cs">
       <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
     <Compile Include="CUDA.cs" />
-    <Compile Include="GPU.xaml.cs">
+    <Compile Include="Windows\CpuInformation.xaml.cs">
+      <DependentUpon>CpuInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GPU.xaml.cs">
       <DependentUpon>GPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Threading.cs" />
+    <Compile Include="ThreadingImprovement.cs" />
     <Compile Include="WindowDialogue.cs" />
-    <Page Include="CPU.xaml">
+    <Page Include="Windows\CPU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GPU.xaml">
+    <Page Include="Windows\CpuInformation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Windows\GPU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GpuInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
+    <Compile Include="Windows\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Windows\GpuInformation.xaml.cs">
+      <DependentUpon>GpuInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -112,7 +128,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\ScoobyDoo project plan.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\_ScoobyDooTitle.png" />
     <Resource Include="Resources\_ScoobyDoo_Logo.png" />

@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using System.Time;
 
 
 class MyCustomRandom : Random
@@ -123,39 +122,39 @@ class TestingThreading
     }
 }
 
-public class Program
-{
-    static void Main()
-    {
-        MyCustomRandom customRandom = new MyCustomRandom();
-        Console.Write("Enter the length of the array: ");
-        if (!int.TryParse(Console.ReadLine(), out int length) || length <= 0)
-        {
-            Console.WriteLine("Invalid input. Please enter a positive integer.");
-            return;
-        }
+//public class Program
+//{
+//    static void Main()
+//    {
+//        MyCustomRandom customRandom = new MyCustomRandom();
+//        Console.Write("Enter the length of the array: ");
+//        if (!int.TryParse(Console.ReadLine(), out int length) || length <= 0)
+//        {
+//            Console.WriteLine("Invalid input. Please enter a positive integer.");
+//            return;
+//        }
 
-        int[] randomArray = new int[length];
-        for (int index = 0; index < length; index++)
-        {
-            randomArray[index] = customRandom.Next(0, 1000); // Random numbers between 0 and 999
-        }
+//        int[] randomArray = new int[length];
+//        for (int index = 0; index < length; index++)
+//        {
+//            randomArray[index] = customRandom.Next(0, 1000); // Random numbers between 0 and 999
+//        }
 
-        Console.WriteLine("Random numbers:");
-        foreach (int number in randomArray)
-        {
-            Console.Write(" " + number);
-        }
-        Console.WriteLine();
+//        Console.WriteLine("Random numbers:");
+//        foreach (int number in randomArray)
+//        {
+//            Console.Write(" " + number);
+//        }
+//        Console.WriteLine();
 
-        Console.Write("Enter the number of threads: ");
-        if (!int.TryParse(Console.ReadLine(), out int numThreads) || numThreads <= 0)
-        {
-            Console.WriteLine("Invalid input. Please enter a positive integer.");
-            return;
-        }
+//        Console.Write("Enter the number of threads: ");
+//        if (!int.TryParse(Console.ReadLine(), out int numThreads) || numThreads <= 0)
+//        {
+//            Console.WriteLine("Invalid input. Please enter a positive integer.");
+//            return;
+//        }
 
-        TestingThreading testingThreading = new TestingThreading(randomArray, numThreads);
-        testingThreading.ComputeAllSum();
-    }
-}
+//        TestingThreading testingThreading = new TestingThreading(randomArray, numThreads);
+//        testingThreading.ComputeAllSum();
+//    }
+//}

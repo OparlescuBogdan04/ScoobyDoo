@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScoobyDoo.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,13 +16,18 @@ using System.Windows.Shapes;
 namespace ScoobyDoo
 {
     /// <summary>
-    /// Interaction logic for CPU.xaml
+    /// Interaction logic for GPU.xaml
     /// </summary>
-    public partial class CPU : Window
+    public partial class GPU : Window
     {
-        public CPU()
+        public GPU()
         {
             InitializeComponent();
+        }
+
+        private void _GpuInfo_Click(object sender, RoutedEventArgs e)
+        {
+            WindowDialogue.CreateNewInstance(new GpuInformation());
         }
     }
 }
