@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Diagnostics;
 
 /*
 Here we got LCG(Linear Congruence Method) for generating random values for the integer array for testing for threading
@@ -154,6 +155,9 @@ class TestingThreading
         int chunkSize = arrayLength / numThreads;
         Thread[] threads = new Thread[numThreads];
         int[] partialSums = new int[numThreads];
+
+        //Start computation measurement for partial sum
+        Stopwatch stopwatch = Stopwatch.StartNew();
         
         // Divide the array into chunks and compute the partial sum in separate threads
         for (int index = 0; index < numThreads; index++)
@@ -168,6 +172,9 @@ class TestingThreading
         {
             thread.Join();
         }
+        //Ends computation measurements for partial sum
+        stopwatch.Stop();
+        Console.WriteLine($"Threaded computation time: {stopwatch.ElapsedMilliseconds} ms");
         
         // Compute the total sum
         int totalSum = 0;
@@ -197,6 +204,9 @@ public class CPUThreadsTesting
 {
     static void Main()
     {
+        //Starts measurements for all algthms 
+        Stopwatch totalStopwatch = Stopwatch.StartNew();
+        
         // Create an instance of MyCustomRandom
         MyCustomRandom customRandom = new MyCustomRandom(Environment.TickCount, 1, 1013904223);
         // Call InitializeThreadedArray method
@@ -217,5 +227,7 @@ public class CPUThreadsTesting
         {
             Console.WriteLine("Exception: " + e.Message);
         }
+        totalStopwatch.Stop();
+        Console.WriteLine($"Total execution time: {totalStopwatch.ElapsedMilliseconds} ms");
     }
 }
