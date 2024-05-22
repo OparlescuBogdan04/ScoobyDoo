@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo.Windows"
         mc:Ignorable="d"
-        Title="Scooby Exception" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Scooby Exception" Height="450" Width="580" ResizeMode="NoResize">
     <Grid>
-        <TextBlock x:Name="_ExceptionText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Exceptin text: " VerticalAlignment="Center"/>
+        <!--Exception Image-->
+        <Image HorizontalAlignment="Center" Height="436" VerticalAlignment="Center" Width="588" Source="/Windows/Exception_Image.png"/>
 
+        <!--Exception Test-->
+        <TextBlock x:Name="_ExceptionText" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Exceptin text: " VerticalAlignment="Top" Foreground="Red" Margin="0,157,0,0" Background="Black"/>
     </Grid>
 </Window>

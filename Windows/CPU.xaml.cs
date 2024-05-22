@@ -34,5 +34,10 @@ namespace ScoobyDoo
         {
 
         }
+
+        private void _StartBenchmark_Click(object sender, RoutedEventArgs e)
+        {
+            WindowDialogue.Exception("This is my first Scooby Exception!");
+        }
     }
 }

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/todo.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/exception_image.png")]
 
 

@@ -159,5 +159,11 @@
   <ItemGroup>
     <Resource Include="Resources\ToDo.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Exception_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Exception_Image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
