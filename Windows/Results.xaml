@@ -11,7 +11,7 @@
         <Button Content="Home" Style="{StaticResource BackButton}"/>
         
         <!--Scooby Software Logo-->
-        <Image HorizontalAlignment="Center" Height="183" Margin="0,100,0,0" VerticalAlignment="Top" Width="275" Source="/Windows/_ScoobyDoo_Logo.png"/>
+        <Image HorizontalAlignment="Center" Height="183" Margin="0,100,0,0" VerticalAlignment="Top" Width="275" Source="/Resources/_ScoobyDoo_Logo.png"/>
         
         
         <!--Scooby Score (in Scooby Snacks)-->
@@ -19,5 +19,6 @@
 
         <!--Save Button-->
         <Button x:Name="_Save" Content="Save" FontSize="16" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="120" Click="_Save_Click"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="56,178,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

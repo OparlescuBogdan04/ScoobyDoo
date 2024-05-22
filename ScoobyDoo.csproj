@@ -56,23 +56,25 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Code\Clock.cs" />
-    <Compile Include="Code\Threading.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="LocalDB.cs" />
+    <Compile Include="Threading.cs" />
     <Compile Include="Windows\ComponentInformation.xaml.cs">
       <DependentUpon>ComponentInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\CPU.xaml.cs">
       <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Code\CUDA.cs" />
+    <Compile Include="CUDA.cs" />
     <Compile Include="Windows\ExceptionWindow.xaml.cs">
       <DependentUpon>ExceptionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GPU.xaml.cs">
       <DependentUpon>GPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Code\ThreadingImprovement.cs" />
-    <Compile Include="Code\WindowDialogue.cs" />
+    <Compile Include="ThreadingImprovement.cs" />
+    <Compile Include="WindowDialogue.cs" />
     <Compile Include="Windows\LoadingBenchmarks.xaml.cs">
       <DependentUpon>LoadingBenchmarks.xaml</DependentUpon>
     </Compile>
@@ -168,9 +170,6 @@
   <ItemGroup>
     <Resource Include="Resources\ScoobySnacks.png" />
     <Resource Include="Resources\ScoobySunglasses.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Windows\_ScoobyDoo_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
