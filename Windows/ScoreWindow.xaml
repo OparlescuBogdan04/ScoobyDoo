@@ -1,0 +1,14 @@
+﻿<Window x:Class="ScoobyDoo.Windows.ScoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoobyDoo.Windows"
+        mc:Ignorable="d"
+        Title="Scooby Score" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Your Scooby Score is: " VerticalAlignment="Center"/>
+        <Button Style="{StaticResource BackButton}" Margin="308,350,0,0"/>
+        <Button x:Name="_Save" Content="Save" HorizontalAlignment="Left" Margin="429,355,0,0" VerticalAlignment="Top" Click="_Save_Click"/>
+    </Grid>
+</Window>

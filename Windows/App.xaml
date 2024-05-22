@@ -18,7 +18,6 @@
             <Setter Property="Padding" Value="5" />
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
-            <!-- Additional styling as needed -->
             <EventSetter Event="Click" Handler="BackButton_Click" />
         </Style>
     </Application.Resources>

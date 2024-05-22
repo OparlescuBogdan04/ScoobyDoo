@@ -1,0 +1,3 @@
+add new fixed window sizes:
+1 big and 1 small and standardize them
+also standardize no resize mode
