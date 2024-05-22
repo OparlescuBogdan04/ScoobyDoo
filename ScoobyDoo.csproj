@@ -56,31 +56,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Clock.cs" />
-    <Compile Include="Threading.cs" />
+    <Compile Include="Code\Clock.cs" />
+    <Compile Include="Code\Threading.cs" />
     <Compile Include="Windows\ComponentInformation.xaml.cs">
       <DependentUpon>ComponentInformation.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\CPU.xaml.cs">
       <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CUDA.cs" />
+    <Compile Include="Code\CUDA.cs" />
     <Compile Include="Windows\ExceptionWindow.xaml.cs">
       <DependentUpon>ExceptionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GPU.xaml.cs">
       <DependentUpon>GPU.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ThreadingImprovement.cs" />
-    <Compile Include="WindowDialogue.cs" />
+    <Compile Include="Code\ThreadingImprovement.cs" />
+    <Compile Include="Code\WindowDialogue.cs" />
     <Compile Include="Windows\LoadingBenchmarks.xaml.cs">
       <DependentUpon>LoadingBenchmarks.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\SaveScore.xaml.cs">
       <DependentUpon>SaveScore.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\ScoreWindow.xaml.cs">
-      <DependentUpon>ScoreWindow.xaml</DependentUpon>
+    <Compile Include="Windows\Results.xaml.cs">
+      <DependentUpon>Results.xaml</DependentUpon>
     </Compile>
     <Page Include="Windows\ComponentInformation.xaml">
       <SubType>Designer</SubType>
@@ -118,7 +118,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\ScoreWindow.xaml">
+    <Page Include="Windows\Results.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +164,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Windows\Exception_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ScoobySnacks.png" />
+    <Resource Include="Resources\ScoobySunglasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\_ScoobyDoo_Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,14 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo.Windows"
         mc:Ignorable="d"
-        Title="Save Scooby Score" Height="450" Width="800">
-    <Grid>
+        Title="Save Scooby Score" Height="220" Width="180" ResizeMode="NoResize">
+    <Grid Background="{StaticResource BackgroundGradient}">
         <!--Username TextBlock-->
-        <TextBlock HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top"/>
 
         <!--Username TextBox-->
-        <TextBox x:Name="_Username" HorizontalAlignment="Center" Margin="0,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="_Save" Content="Save" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" Click="_Save_Click"/>
+        <TextBox x:Name="_Username" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        
+        <!--Save to local db button-->
+        <Button Name="_Save" Content="Save" HorizontalAlignment="Center" Margin="0,120,0,0" VerticalAlignment="Top" Click="_Save_Click" Width="60"/>
 
     </Grid>
 </Window>

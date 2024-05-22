@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo.Windows"
         mc:Ignorable="d"
-        Title="ComponentInformation" Height="200" Width="350" ResizeMode="NoResize">
+        Title="ComponentInformation" Height="280" Width="300" ResizeMode="NoResize">
     <Grid>
-        <TextBlock x:Name="_Information" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Information" VerticalAlignment="Center"/>
+        <TextBlock x:Name="_Information" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Information" VerticalAlignment="Center" />
     </Grid>
 </Window>

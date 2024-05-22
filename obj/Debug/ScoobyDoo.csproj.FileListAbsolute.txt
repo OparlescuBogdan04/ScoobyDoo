@@ -39,9 +39,9 @@ C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ComponentInformation.
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ExceptionWindow.g.cs
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\LoadingBenchmarks.g.cs
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\SaveScore.g.cs
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ScoreWindow.g.cs
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ComponentInformation.baml
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ExceptionWindow.baml
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\LoadingBenchmarks.baml
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\SaveScore.baml
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ScoreWindow.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\Results.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\Results.baml

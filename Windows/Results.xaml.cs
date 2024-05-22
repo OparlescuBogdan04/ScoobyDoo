@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ScoobyDoo.Windows
 {
     /// <summary>
-    /// Interaction logic for ScoreWindow.xaml
+    /// Interaction logic for Results.xaml
     /// </summary>
-    public partial class ScoreWindow : Window
+    public partial class Results : Window
     {
-        public ScoreWindow()
+        public Results()
         {
             InitializeComponent();
         }
@@ -27,6 +27,11 @@ namespace ScoobyDoo.Windows
         private void _Save_Click(object sender, RoutedEventArgs e)
         {
             WindowDialogue.CreateNewInstance(new SaveScore());
+        }
+
+        void DisplayScoobyScore(int value)
+        {
+            _ScoobyScore.Text = $"Your Scooby Score is: {value}";
         }
     }
 }

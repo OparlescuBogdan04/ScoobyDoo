@@ -1,3 +1,13 @@
 add new fixed window sizes:
 1 big and 1 small and standardize them
 also standardize no resize mode
+
+Components windows:
+h:280
+w:300
+
+Save Score (little window):
+Height="220" Width="180"
+
+Results:
+Height="450" Width="400"

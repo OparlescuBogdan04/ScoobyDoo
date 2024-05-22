@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/exception_image.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("windows/_scoobydoo_logo.png")]
 
 
