@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\User\Documents\GitHub\ScoobyDoo\Windows\App.xaml
-8-1677979795
+8-321578060
 
-181456092911
+18-1637388604
 14-783668331
-Windows\CPU.xaml;Windows\CpuInformation.xaml;Windows\ExceptionWindow.xaml;Windows\GPU.xaml;Windows\GpuInformation.xaml;Windows\MainWindow.xaml;Windows\SaveScore.xaml;Windows\ScoreWindow.xaml;
+Windows\ComponentInformation.xaml;Windows\CPU.xaml;Windows\ExceptionWindow.xaml;Windows\GPU.xaml;Windows\LoadingBenchmarks.xaml;Windows\MainWindow.xaml;Windows\SaveScore.xaml;Windows\ScoreWindow.xaml;
 
-True
+False
 

@@ -7,7 +7,21 @@
         mc:Ignorable="d"
         Title="CPU Testing" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="{StaticResource BackgroundGradient}">
-        <Button x:Name="_CpuInfo" Content="Cpu Info" HorizontalAlignment="Left" Margin="345,370,0,0" VerticalAlignment="Top" Click="_CpuInfo_Click"/>
+        
+        <!--Back Button-->
         <Button Style="{StaticResource BackButton}"/>
+        
+        <!--Information Button-->
+        <Button x:Name="_CpuInfo" Content="Cpu Info" HorizontalAlignment="Left" Margin="345,370,0,0" VerticalAlignment="Top" Click="_CpuInfo_Click"/>
+
+        <Slider Name="DiscreteSlider"
+                Minimum="0"
+                Maximum="9"
+                TickFrequency="1"
+                IsSnapToTickEnabled="True"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="200"
+                ValueChanged="DiscreteSlider_ValueChanged" />
     </Grid>
 </Window>

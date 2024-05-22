@@ -18,16 +18,90 @@ using System.Windows.Shapes;
 namespace ScoobyDoo.Windows
 {
     /// <summary>
-    /// Interaction logic for GpuInformation.xaml
+    /// Interaction logic for ComponentInformation.xaml
     /// </summary>
-    public partial class GpuInformation : Window
+    public partial class ComponentInformation : Window
     {
-        public GpuInformation()
+        public enum Component { NULL,CPU,GPU};
+        public ComponentInformation(string window_title,Component component)
         {
             InitializeComponent();
-            _Information.Text = GetGpuInformation();
+            Title = window_title;
+
+            if(component==Component.CPU)
+            {
+                _Information.Text=GetCpuInformation();
+                return;
+            }
+
+            if(component==Component.GPU)
+            {
+                _Information.Text = GetGpuInformation();
+                return;
+            }
+
+            _Information.Text = "This component is not supported!";
         }
 
+        #region CPU Information
+        public static string GetCpuInformation()
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+                return GetCpuInformationWindows();
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                return GetCpuInformationLinux();
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                return GetCpuInformationMac();
+            else
+                return "Unsupported OS";
+        }
+
+        private static string GetCpuInformationWindows()
+        {
+            StringBuilder cpuInfo = new StringBuilder();
+
+            try
+            {
+                // Query the CPU information
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("select * from Win32_Processor");
+
+                foreach (ManagementObject obj in searcher.Get())
+                {
+                    cpuInfo.AppendLine("CPU Information:");
+                    cpuInfo.AppendLine($"Name: {obj["Name"]}");
+                    cpuInfo.AppendLine($"Manufacturer: {obj["Manufacturer"]}");
+                    cpuInfo.AppendLine($"Description: {obj["Description"]}");
+                    cpuInfo.AppendLine($"Number Of Cores: {obj["NumberOfCores"]}");
+                    cpuInfo.AppendLine($"Number Of Logical Processors: {obj["NumberOfLogicalProcessors"]}");
+                    cpuInfo.AppendLine($"Processor ID: {obj["ProcessorId"]}");
+                    cpuInfo.AppendLine($"Socket Designation: {obj["SocketDesignation"]}");
+                    cpuInfo.AppendLine($"Max Clock Speed: {obj["MaxClockSpeed"]} MHz");
+                    cpuInfo.AppendLine($"Current Clock Speed: {obj["CurrentClockSpeed"]} MHz");
+                    cpuInfo.AppendLine($"L2 Cache Size: {obj["L2CacheSize"]} KB");
+                    cpuInfo.AppendLine($"L3 Cache Size: {obj["L3CacheSize"]} KB");
+                    cpuInfo.AppendLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                cpuInfo.AppendLine($"An error occurred while retrieving CPU information: {ex.Message}");
+            }
+
+            return cpuInfo.ToString();
+        }
+
+        private static string GetCpuInformationLinux()
+        {
+            return ExecuteBashCommand("lscpu");
+        }
+
+        private static string GetCpuInformationMac()
+        {
+            return ExecuteBashCommand("sysctl -a | grep machdep.cpu");
+        }
+#endregion
+
+        #region GPU Information
         public static string GetGpuInformation()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
@@ -79,6 +153,7 @@ namespace ScoobyDoo.Windows
         {
             return ExecuteBashCommand("system_profiler SPDisplaysDataType");
         }
+        #endregion
 
         private static string ExecuteBashCommand(string command)
         {

@@ -9,10 +9,10 @@
     <Grid>
         <!--Username TextBlock-->
         <TextBlock HorizontalAlignment="Center" Margin="0,168,0,0" TextWrapping="Wrap" Text="Username: " VerticalAlignment="Top"/>
-        
+
         <!--Username TextBox-->
         <TextBox x:Name="_Username" HorizontalAlignment="Center" Margin="0,196,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Name="_Save" Content="Save" HorizontalAlignment="Left" Margin="398,253,0,0" VerticalAlignment="Top"/>
+        <Button Name="_Save" Content="Save" HorizontalAlignment="Center" Margin="0,241,0,0" VerticalAlignment="Top" Click="_Save_Click"/>
 
     </Grid>
 </Window>

@@ -35,7 +35,13 @@ C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\CPU.baml
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\GPU.baml
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\MainWindow.g.cs
 C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\MainWindow.baml
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\CpuInformation.g.cs
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\CpuInformation.baml
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\GpuInformation.g.cs
-C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\GpuInformation.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ComponentInformation.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ExceptionWindow.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\LoadingBenchmarks.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\SaveScore.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ScoreWindow.g.cs
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ComponentInformation.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ExceptionWindow.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\LoadingBenchmarks.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\SaveScore.baml
+C:\Users\User\Documents\GitHub\ScoobyDoo\obj\Debug\Windows\ScoreWindow.baml

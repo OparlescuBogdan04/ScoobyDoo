@@ -1,8 +1,11 @@
 ﻿
 FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\App.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\ComponentInformation.xaml;;
 FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\CPU.xaml;;
-FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\CpuInformation.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\ExceptionWindow.xaml;;
 FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\GPU.xaml;;
-FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\GpuInformation.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\LoadingBenchmarks.xaml;;
 FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\MainWindow.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\SaveScore.xaml;;
+FC:\Users\User\Documents\GitHub\ScoobyDoo\Windows\ScoreWindow.xaml;;
 

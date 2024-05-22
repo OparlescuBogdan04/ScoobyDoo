@@ -58,23 +58,39 @@
     </ApplicationDefinition>
     <Compile Include="Clock.cs" />
     <Compile Include="Threading.cs" />
+    <Compile Include="Windows\ComponentInformation.xaml.cs">
+      <DependentUpon>ComponentInformation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CPU.xaml.cs">
       <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
     <Compile Include="CUDA.cs" />
-    <Compile Include="Windows\CpuInformation.xaml.cs">
-      <DependentUpon>CpuInformation.xaml</DependentUpon>
+    <Compile Include="Windows\ExceptionWindow.xaml.cs">
+      <DependentUpon>ExceptionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\GPU.xaml.cs">
       <DependentUpon>GPU.xaml</DependentUpon>
     </Compile>
     <Compile Include="ThreadingImprovement.cs" />
     <Compile Include="WindowDialogue.cs" />
+    <Compile Include="Windows\LoadingBenchmarks.xaml.cs">
+      <DependentUpon>LoadingBenchmarks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SaveScore.xaml.cs">
+      <DependentUpon>SaveScore.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ScoreWindow.xaml.cs">
+      <DependentUpon>ScoreWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\ComponentInformation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\CPU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\CpuInformation.xaml">
+    <Page Include="Windows\ExceptionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,7 +98,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\GpuInformation.xaml">
+    <Page Include="Windows\LoadingBenchmarks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,13 +110,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Windows\GpuInformation.xaml.cs">
-      <DependentUpon>GpuInformation.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\SaveScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ScoreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -134,6 +155,9 @@
   <ItemGroup>
     <Resource Include="Resources\_ScoobyDooTitle.png" />
     <Resource Include="Resources\_ScoobyDoo_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ToDo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

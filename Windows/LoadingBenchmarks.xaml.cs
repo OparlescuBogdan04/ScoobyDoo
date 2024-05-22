@@ -1,5 +1,4 @@
-﻿using ScoobyDoo.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,21 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ScoobyDoo
+namespace ScoobyDoo.Windows
 {
     /// <summary>
-    /// Interaction logic for GPU.xaml
+    /// Interaction logic for LoadingBenchmarks.xaml
     /// </summary>
-    public partial class GPU : Window
+    public partial class LoadingBenchmarks : Window
     {
-        public GPU()
+        public LoadingBenchmarks(string window_name, string benchmark_test)
         {
             InitializeComponent();
+            this.Title=window_name;
+            _BenchmarkName.Text = benchmark_test;
+            UpdateElapsedTime(0);
         }
 
-        private void _GpuInfo_Click(object sender, RoutedEventArgs e)
+        void UpdateElapsedTime(int value)
         {
-            WindowDialogue.CreateNewInstance(new ComponentInformation("GPU Information",ComponentInformation.Component.GPU));
+            _TimeElapsed.Text = $"Elapsed Time: {value}";
         }
     }
 }

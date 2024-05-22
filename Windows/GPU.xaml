@@ -7,8 +7,12 @@
         mc:Ignorable="d"
         Title="GPU Testing" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="{StaticResource BackgroundGradient}">
-        <Button x:Name="_GpuInfo" Content="Gpu Info" HorizontalAlignment="Left" Margin="345,370,0,0" VerticalAlignment="Top" Click="_GpuInfo_Click"/>
+        
+        <!--Back Button-->
         <Button Style="{StaticResource BackButton}"/>
+
+        <!--Information Button-->
+        <Button x:Name="_GpuInfo" Content="Gpu Info" HorizontalAlignment="Left" Margin="345,370,0,0" VerticalAlignment="Top" Click="_GpuInfo_Click"/>
 
     </Grid>
 </Window>

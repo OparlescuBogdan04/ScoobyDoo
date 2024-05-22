@@ -27,7 +27,12 @@ namespace ScoobyDoo
 
         private void _CpuInfo_Click(object sender, RoutedEventArgs e)
         {
-            WindowDialogue.CreateNewInstance(new CpuInformation());
+            WindowDialogue.CreateNewInstance(new ComponentInformation("CPU Information",ComponentInformation.Component.CPU));
+        }
+
+        private void DiscreteSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
         }
     }
 }
