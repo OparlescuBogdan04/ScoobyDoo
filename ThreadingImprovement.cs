@@ -189,6 +189,7 @@ class TestingThreading
             }
         }
         partialSums[threadIndex] = sum;
+        Console.WriteLine($"Thread {threadIndex + 1} partial sum: {sum}");
     }
 }
 
