@@ -3,6 +3,15 @@ using System.Diagnostics;
 using System.Threading;
 using System.Time;
 
+/* Linear Congruential Generator (LCG)
+ * Recurrence relation
+ * x[n + 1] = (a * x[n] + c) mod m
+ * a - multiplier
+ * c - increment
+ * m - modulus
+ * x[0] is seed
+ * x - sequence of pseudo-random values
+ */
 
 class MyCustomRandom : Random
 {
