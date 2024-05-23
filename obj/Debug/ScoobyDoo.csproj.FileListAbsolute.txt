@@ -29,3 +29,6 @@ C:\Users\Reezy\Documents\GitHub\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.GenerateRes
 C:\Users\Reezy\Documents\GitHub\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.CoreCompileInputs.cache
 C:\Users\Reezy\Documents\GitHub\ScoobyDoo\obj\Debug\ScoobyDoo.exe
 C:\Users\Reezy\Documents\GitHub\ScoobyDoo\obj\Debug\ScoobyDoo.pdb
+C:\Users\Reezy\Documents\GitHub\ScoobyDoo\bin\Debug\ManagedCuda.dll
+C:\Users\Reezy\Documents\GitHub\ScoobyDoo\bin\Debug\System.Drawing.Common.dll
+C:\Users\Reezy\Documents\GitHub\ScoobyDoo\obj\Debug\ScoobyDoo.csproj.CopyComplete

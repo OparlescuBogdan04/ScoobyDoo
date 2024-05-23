@@ -17,15 +17,15 @@
         <!--Array Length-->
         <Grid>
             <TextBlock HorizontalAlignment="Left" Margin="297,140,0,0" TextWrapping="Wrap" Text="Array Length: " Foreground="DarkGreen" VerticalAlignment="Top"/>
-            <Slider x:Name="ArrayLengthSlider" Minimum="0" Maximum="9" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" ValueChanged="ArrayLengthSlider_ValueChanged" Margin="0,175,0,0"/>
-            <TextBox Name="ArrayLengthTextBox" Text="0" HorizontalAlignment="Left" Margin="464,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="ArrayLengthTextBox_TextChanged"/>
+            <Slider x:Name="ArrayLengthSlider" Minimum="1" Maximum="1000" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" ValueChanged="ArrayLengthSlider_ValueChanged" Margin="0,175,0,0"/>
+            <TextBox Name="ArrayLengthTextBox" Text="0" HorizontalAlignment="Left" Margin="464,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextChanged="ArrayLengthTextBox_TextChanged"/>
         </Grid>
         
         <!--No Threads-->
         <Grid>
             <TextBlock HorizontalAlignment="Left" Margin="296,226,0,0" TextWrapping="Wrap" Text="Number of Threads: " Foreground="DarkGreen" VerticalAlignment="Top"/>
             <Slider Name="ThreadsSlider" Minimum="1" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" ValueChanged="ThreadsSlider_ValueChanged" Margin="0,254,0,0"/>
-            <TextBox Name="ThreadsTextBox" Text="1" HorizontalAlignment="Left" Margin="465,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="30" TextChanged="ThreadsTextBox_TextChanged"/>
+            <TextBox Name="ThreadsTextBox" Text="1" HorizontalAlignment="Left" Margin="465,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextChanged="ThreadsTextBox_TextChanged"/>
         </Grid>
         
         <!--Start Benchmark-->

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Management;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,7 @@ namespace ScoobyDoo.Windows
     public partial class ComponentInformation : Window
     {
         public enum Component { NULL,CPU,GPU};
+
         public ComponentInformation(string window_title,Component component)
         {
             InitializeComponent();

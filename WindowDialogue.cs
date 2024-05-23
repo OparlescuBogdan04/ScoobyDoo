@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Component = ScoobyDoo.Windows.ComponentInformation.Component;
 
 namespace ScoobyDoo
 {
@@ -29,6 +30,11 @@ namespace ScoobyDoo
         public static void Exception(string message)
         {
             CreateNewInstance(new ExceptionWindow(message));
+        }
+
+        public static string name(this Component component)
+        {
+            return (component == Component.CPU) ? "CPU" : (component == Component.GPU ? "GPU" : "Unknown");
         }
     }
 }

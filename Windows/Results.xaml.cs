@@ -20,20 +20,33 @@ namespace ScoobyDoo.Windows
     /// </summary>
     public partial class Results : Window
     {
+        int score = 0;
+        Component Component = Component.NULL;
         public Results(int score,Component component)
         {
             InitializeComponent();
+            this.score = score;
+            this.Component=component;
             DisplayScoobyScore(score,component);
+        }
+
+        public int getScore()
+        {
+            return score;
+        }
+        public Component getComponent()
+        {
+            return Component;
         }
 
         private void _Save_Click(object sender, RoutedEventArgs e)
         {
-            WindowDialogue.CreateNewInstance(new SaveScore());
+            WindowDialogue.CreateNewInstance(new SaveScore(this));
         }
 
         void DisplayScoobyScore(int value,Component component)
         {
-            string component_name=(component==Component.CPU)?"CPU":(component==Component.GPU?"GPU":"Unknown");
+            string component_name=component.name();
             _ScoobyScore.Text = $"Your Scooby Score is: {value}\nTested {component_name}";
         }
     }

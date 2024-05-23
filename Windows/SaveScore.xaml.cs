@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +20,28 @@ namespace ScoobyDoo.Windows
     /// </summary>
     public partial class SaveScore : Window
     {
-        public SaveScore()
+        public Results results = null;
+        public SaveScore(Results results)
         {
             InitializeComponent();
+            this.results = results;
         }
 
         private void _Save_Click(object sender, RoutedEventArgs e)
         {
-            //save data to user db
+            AppendScore();
+        }
+
+
+        string path = $"{Environment.GetFolderPath(Environment.SpecialFolder.Desktop)}/scores.txt";
+
+        void AppendScore()
+        {
+            StreamWriter writer = File.AppendText(path);
+            string line = $"Testing: {results.getComponent().name()}    Score: {results.getScore()}    Username: {_Username.Text}";
+            writer.WriteLine(line);
+            writer.Close();
+            MessageBox.Show(line);
         }
     }
 }

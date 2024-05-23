@@ -20,10 +20,11 @@ namespace ScoobyDoo
     /// </summary>
     public partial class CPU : Window
     {
+        int MaxNoThreads = Environment.ProcessorCount;
         public CPU()
         {
             InitializeComponent();
-            ThreadsSlider.Maximum= Environment.ProcessorCount;
+            ThreadsSlider.Maximum = MaxNoThreads;
         }
 
         #region Binding Slider with textbox
@@ -68,22 +69,28 @@ namespace ScoobyDoo
         private void _StartBenchmark_Click(object sender, RoutedEventArgs e)
         {
             int array_length = 1000 * int.Parse(ArrayLengthTextBox.Text);
-            int no_threads=int.Parse(ThreadsTextBox.Text);
+            int no_threads = int.Parse(ThreadsTextBox.Text);
 
-            if(array_length<0)
+            if (array_length < 0)
             {
                 WindowDialogue.Exception("Array length cannot be negative!");
                 return;
             }
 
-            if(no_threads<0)
+            if (no_threads < 0)
             {
                 WindowDialogue.Exception("No threads cannot be negative!");
                 return;
             }
 
-            LoadingBenchmarks loading = new LoadingBenchmarks("CPU testing", "CPU testing using Threads");
-            loading.TestCPU(array_length, no_threads);
+            if(no_threads>MaxNoThreads)
+                {
+                WindowDialogue.Exception("You don't have that many threads!");
+                return;
+            }
+
+            LoadingBenchmarks.CPU_package package=new LoadingBenchmarks.CPU_package(array_length, no_threads);
+            LoadingBenchmarks loading = new LoadingBenchmarks("CPU testing", "CPU testing using Threads",package);
             this.SwitchTo(loading);
         }
     }
