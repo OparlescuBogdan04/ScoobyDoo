@@ -1,4 +1,4 @@
-﻿using ScoobyDoo.Windows;
+using ScoobyDoo.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +23,7 @@ namespace ScoobyDoo
         public CPU()
         {
             InitializeComponent();
+            ThreadsSlider.Maximum= Environment.ProcessorCount;
         }
 
         #region Binding Slider with textbox
@@ -66,7 +67,24 @@ namespace ScoobyDoo
 
         private void _StartBenchmark_Click(object sender, RoutedEventArgs e)
         {
-            WindowDialogue.Exception("This is my first Scooby Exception!");
+            int array_length = 1000 * int.Parse(ArrayLengthTextBox.Text);
+            int no_threads=int.Parse(ThreadsTextBox.Text);
+
+            if(array_length<0)
+            {
+                WindowDialogue.Exception("Array length cannot be negative!");
+                return;
+            }
+
+            if(no_threads<0)
+            {
+                WindowDialogue.Exception("No threads cannot be negative!");
+                return;
+            }
+
+            LoadingBenchmarks loading = new LoadingBenchmarks("CPU testing", "CPU testing using Threads");
+            loading.TestCPU(array_length, no_threads);
+            this.SwitchTo(loading);
         }
     }
 }

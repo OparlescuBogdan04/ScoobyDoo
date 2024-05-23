@@ -11,11 +11,11 @@
         <Button Content="Home" Style="{StaticResource BackButton}"/>
         
         <!--Scooby Software Logo-->
-        <Image HorizontalAlignment="Center" Height="183" Margin="0,100,0,0" VerticalAlignment="Top" Width="275" Source="/Resources/_ScoobyDoo_Logo.png"/>
+        <Image HorizontalAlignment="Center" Height="183" Margin="0,80,0,0" VerticalAlignment="Top" Width="275" Source="/Resources/_ScoobyDoo_Logo.png"/>
         
         
         <!--Scooby Score (in Scooby Snacks)-->
-        <TextBlock x:Name="_ScoobyScore" HorizontalAlignment="Center" Margin="0,200,0,0" TextWrapping="Wrap" Text="Your Scooby Score is: " FontSize="20" VerticalAlignment="Center"/>
+        <TextBlock x:Name="_ScoobyScore" HorizontalAlignment="Center" Margin="0,200,0,0" TextWrapping="Wrap" Text="Your Scooby Score is: " TextAlignment="Center" FontSize="20" VerticalAlignment="Center"/>
 
         <!--Save Button-->
         <Button x:Name="_Save" Content="Save" FontSize="16" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Width="120" Click="_Save_Click"/>

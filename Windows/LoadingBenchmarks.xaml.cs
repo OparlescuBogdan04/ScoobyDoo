@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Component = ScoobyDoo.Windows.ComponentInformation.Component;
 
 namespace ScoobyDoo.Windows
 {
@@ -19,6 +20,8 @@ namespace ScoobyDoo.Windows
     /// </summary>
     public partial class LoadingBenchmarks : Window
     {
+        int score = 0;
+        Component tested_component=Component.NULL;
         public LoadingBenchmarks(string window_name, string benchmark_test)
         {
             InitializeComponent();
@@ -30,6 +33,25 @@ namespace ScoobyDoo.Windows
         void UpdateElapsedTime(int value)
         {
             _TimeElapsed.Text = $"Elapsed Time: {value}";
+        }
+
+        public void TestCPU(int array_length,int no_threads)
+        {
+            //testing
+            tested_component = Component.CPU;
+            _Done.Visibility = Visibility.Visible;
+        }
+
+        void TestGPU()
+        {
+            //testing
+            tested_component = Component.GPU;
+            _Done.Visibility = Visibility.Visible;
+        }
+
+        private void _Done_Click(object sender, RoutedEventArgs e)
+        {
+            this.SwitchTo(new Results(score,tested_component));
         }
     }
 }

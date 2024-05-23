@@ -58,7 +58,9 @@
     </ApplicationDefinition>
     <Compile Include="Clock.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="CPU.xaml.cs" />
+    <Compile Include="Windows\CPU.xaml.cs">
+      <DependentUpon>CPU.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LocalDB.cs" />
     <Compile Include="Windows\ComponentInformation.xaml.cs">
       <DependentUpon>ComponentInformation.xaml</DependentUpon>
@@ -170,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Windows\Flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Exception_Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

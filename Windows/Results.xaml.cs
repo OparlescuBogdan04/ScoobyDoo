@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Component = ScoobyDoo.Windows.ComponentInformation.Component;
 
 namespace ScoobyDoo.Windows
 {
@@ -19,9 +20,10 @@ namespace ScoobyDoo.Windows
     /// </summary>
     public partial class Results : Window
     {
-        public Results()
+        public Results(int score,Component component)
         {
             InitializeComponent();
+            DisplayScoobyScore(score,component);
         }
 
         private void _Save_Click(object sender, RoutedEventArgs e)
@@ -29,9 +31,10 @@ namespace ScoobyDoo.Windows
             WindowDialogue.CreateNewInstance(new SaveScore());
         }
 
-        void DisplayScoobyScore(int value)
+        void DisplayScoobyScore(int value,Component component)
         {
-            _ScoobyScore.Text = $"Your Scooby Score is: {value}";
+            string component_name=(component==Component.CPU)?"CPU":(component==Component.GPU?"GPU":"Unknown");
+            _ScoobyScore.Text = $"Your Scooby Score is: {value}\nTested {component_name}";
         }
     }
 }
