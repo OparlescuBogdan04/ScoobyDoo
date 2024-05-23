@@ -5,15 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo.Windows"
         mc:Ignorable="d"
-        Title="LoadingBenchmarks" Height="450" Width="800">
+        Title="LoadingBenchmarks" Height="430" Width="734">
     <Grid>
+
+        <!--Sunglasses Scooby Doo-->
+        <Image HorizontalAlignment="Center" Height="413" Margin="0,0,0,0" VerticalAlignment="Center" Width="735" Source="/Windows/ScoobySunglasses.png"/>
+
         <!--Benchmark name-->
-        <TextBlock x:Name="_BenchmarkName" HorizontalAlignment="Center" Margin="0,194,0,0" TextWrapping="Wrap" Text="Benchmark Name" VerticalAlignment="Top"/>
+        <TextBlock x:Name="_BenchmarkName" HorizontalAlignment="Center" Margin="0,16,0,0" TextWrapping="Wrap" Text="Benchmark Name" FontSize="20" Foreground="BlueViolet" VerticalAlignment="Top"/>
 
         <!--Time elapsed box-->
-        <TextBlock x:Name="_TimeElapsed" HorizontalAlignment="Center" Margin="0,268,0,0" TextWrapping="Wrap" Text="Elapsed Time: " VerticalAlignment="Top"/>
-        
+        <TextBlock x:Name="_TimeElapsed" HorizontalAlignment="Left" Margin="291,111,0,0" TextWrapping="Wrap" Text="Elapsed Time: " Foreground="Aqua" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-20.38"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+
         <!--Done-->
-        <Button x:Name="_Done" Content="Done" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,380,0,0" VerticalAlignment="Top" Click="_Done_Click"/>
+        <Button x:Name="_Done" Content="Done" Visibility="Visible" HorizontalAlignment="Center" Width="120" Margin="0,360,0,0" VerticalAlignment="Top" Click="_Done_Click"/>
     </Grid>
 </Window>
