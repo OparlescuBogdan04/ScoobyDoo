@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 using Component = ScoobyDoo.Windows.ComponentInformation.Component;
@@ -25,10 +26,36 @@ namespace ScoobyDoo.Windows
         public LoadingBenchmarks(string window_name, string benchmark_test)
         {
             InitializeComponent();
-            this.Title = window_name;
+            Title = window_name;
             _BenchmarkName.Text = benchmark_test;
             UpdateElapsedTime(0);
         }
+
+        #region coroutine
+        DateTime start_time;
+        bool is_running = false;
+        void InitializeCoroutine()
+        {
+            is_running = true;
+            start_time = DateTime.Now;
+            StartCoroutine();
+        }
+
+        void StartCoroutine()
+        {
+            begin:
+            UpdateElapsedTime();
+
+            Task.Delay(100).Wait();
+            if (is_running)
+                goto begin;
+        }
+
+        void StopCoroutine()
+        {
+            is_running= false;
+        }
+        #endregion
 
         public LoadingBenchmarks(string window_name, string benchmark_test,CPU_package package):this(window_name, benchmark_test) 
         {
@@ -40,11 +67,19 @@ namespace ScoobyDoo.Windows
             _TimeElapsed.Text = $"Elapsed Time:\n{value} milliseconds";
         }
 
+        void UpdateElapsedTime()
+        {
+            int ms = (int)(DateTime.Now - start_time).TotalMilliseconds;
+            UpdateElapsedTime(ms);
+        }
+
         public void TestCPU(int array_length, int no_threads)
         {
             tested_component = Component.CPU;
             Clock clock = new Clock();
+            //InitializeCoroutine();
             //AICI !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            //StopCoroutine();
             _Done.Visibility = Visibility.Visible;
             int time = clock.GetLapTime();
 
