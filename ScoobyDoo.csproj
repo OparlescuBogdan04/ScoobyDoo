@@ -58,13 +58,10 @@
     </ApplicationDefinition>
     <Compile Include="Clock.cs" />
     <Compile Include="Configuration.cs" />
+    <Compile Include="CPU.xaml.cs" />
     <Compile Include="LocalDB.cs" />
-    <Compile Include="Threading.cs" />
     <Compile Include="Windows\ComponentInformation.xaml.cs">
       <DependentUpon>ComponentInformation.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\CPU.xaml.cs">
-      <DependentUpon>CPU.xaml</DependentUpon>
     </Compile>
     <Compile Include="CUDA.cs" />
     <Compile Include="Windows\ExceptionWindow.xaml.cs">
@@ -165,11 +162,14 @@
     <Resource Include="Resources\Exception_Image.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Windows\Exception_Image.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\ScoobySnacks.png" />
     <Resource Include="Resources\ScoobySunglasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Scooby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windows\Flower.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

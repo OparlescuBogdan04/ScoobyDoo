@@ -202,7 +202,7 @@ class TestingThreading
 
 public class CPUThreadsTesting
 {
-    static void Main()
+    static void _Main()
     {
         //Starts measurements for all algthms 
         Stopwatch totalStopwatch = Stopwatch.StartNew();
