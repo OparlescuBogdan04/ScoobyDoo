@@ -78,10 +78,7 @@ namespace ScoobyDoo.Windows
             tested_component = Component.CPU;
             Clock clock = new Clock();
             //InitializeCoroutine();
-            MyCustomRandom customRandom = new MyCustomRandom(Environment.TickCount, 1, 1013904223);
-            customRandom.InitializeThreadedArray();//Genereaza array cu random ints
-            TestingThreading ThreadingTest = new TestingThreading(customRandom.randomArray);
-            ThreadingTest.ThreadedArraySum(20, 4); //functia care genereaza array de lungime 20 si imparte in 4 threaduri
+            new TestingThreading().____ThreadsTesting(array_length, no_threads);
             //StopCoroutine();
             _Done.Visibility = Visibility.Visible;
             int time = clock.GetLapTime();

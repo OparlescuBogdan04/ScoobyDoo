@@ -103,27 +103,14 @@ class MyCustomRandom : Random
         return Sample();
     }
 
-    public void InitializeThreadedArray()
+    public void InitializeThreadedArray(int length)
     {
-        Console.Write("Enter the length of the array: ");
-        if (!int.TryParse(Console.ReadLine(), out int length) || length <= 0)
-        {
-            Console.WriteLine("Invalid input. Please enter a positive integer.");
-            return;
-        }
         
         randomArray = new int[length];
         for (int index = 0; index < length; index++)
         {
             randomArray[index] = Next(0, 1000); // Random numbers between 0 and 999
         }
-
-        Console.WriteLine("Random numbers:");
-        foreach (int number in randomArray)
-        {
-            Console.Write(number + " ");
-        }
-        Console.WriteLine();
     }
 }
 
@@ -131,10 +118,24 @@ class TestingThreading
 {
     private int[] randomArray;
 
+    public TestingThreading()
+    {
+    }
+
+
+
     // Constructor
     public TestingThreading(int[] randomArray)
     {
         this.randomArray = randomArray;
+    }
+
+    public void ____ThreadsTesting(int array_len,int no_threads)
+    {
+        MyCustomRandom customRandom = new MyCustomRandom(Environment.TickCount, 1, 1013904223);
+        customRandom.InitializeThreadedArray(array_len);//Genereaza array cu random ints
+        TestingThreading ThreadingTest = new TestingThreading(customRandom.randomArray);
+        ThreadingTest.ThreadedArraySum(array_len,no_threads); //functia care genereaza array de lungime 20 si imparte in 4 threaduri
     }
 
     public void ThreadedArraySum(int Array_Length, int numThreads)

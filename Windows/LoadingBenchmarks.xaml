@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoobyDoo.Windows"
         mc:Ignorable="d"
-        Title="LoadingBenchmarks" Height="430" Width="734">
+        Title="LoadingBenchmarks" Height="430" Width="734" ResizeMode="NoResize">
     <Grid>
 
         <!--Sunglasses Scooby Doo-->

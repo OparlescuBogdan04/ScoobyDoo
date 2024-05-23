@@ -16,7 +16,7 @@
         
         <!--Array Length-->
         <Grid>
-            <TextBlock HorizontalAlignment="Left" Margin="297,140,0,0" TextWrapping="Wrap" Text="Array Length: " Foreground="DarkGreen" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="297,140,0,0" TextWrapping="Wrap" Text="Array Length(*1000): " Foreground="DarkGreen" VerticalAlignment="Top"/>
             <Slider x:Name="ArrayLengthSlider" Minimum="1" Maximum="1000" TickFrequency="1" IsSnapToTickEnabled="True" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" ValueChanged="ArrayLengthSlider_ValueChanged" Margin="0,175,0,0"/>
             <TextBox Name="ArrayLengthTextBox" Text="0" HorizontalAlignment="Left" Margin="464,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextChanged="ArrayLengthTextBox_TextChanged"/>
         </Grid>
