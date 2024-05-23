@@ -137,7 +137,7 @@ class TestingThreading
         this.randomArray = randomArray;
     }
 
-    public void ThreadedArraySum(int numThreads)
+    public void ThreadedArraySum(int Array_Length, int numThreads)
     {
         if (randomArray == null)
         {
@@ -151,7 +151,7 @@ class TestingThreading
         {
             throw new InvalidOperationException("Array is empty.");
         }
-        int arrayLength = randomArray.Length;
+        int arrayLength = Array_Length;
         int chunkSize = arrayLength / numThreads;
         Thread[] threads = new Thread[numThreads];
         int[] partialSums = new int[numThreads];
