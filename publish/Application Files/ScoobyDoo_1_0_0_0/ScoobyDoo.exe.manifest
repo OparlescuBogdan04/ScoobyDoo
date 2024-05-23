@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="ScoobyDoo.exe" version="1.0.0.0" publicKeyToken="53b78a14a5e9011c" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="ScoobyDoo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="ScoobyDoo.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ManagedCuda.dll" size="3573760">
+      <assemblyIdentity name="ManagedCuda" version="10.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Xss5h70AvOi2LNRurqmA7CStPhcxEaJ04cQfnhwMwIo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ScoobyDoo.exe" size="3914200">
+      <assemblyIdentity name="ScoobyDoo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MtMNowIrH8Fo4SEcWHOKl3ZF1Pow2MDX1zLq6xFbvI4=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Drawing.Common.dll" size="51248">
+      <assemblyIdentity name="System.Drawing.Common" version="4.0.0.1" publicKeyToken="CC7B13FFCD2DDD51" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>X6ss9XMR2B9Nfflq0TpTJ1rlTP+2nsLkunt9xwaggKE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="ScoobyDoo.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-L36DMGL\User" issuerKeyHash="24a599ed61e695e14873a70e63f576428bd89ff9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>F+MugdbcR9cL3HfRVoktrjf3+y4m6ydxWYPK1F6g+J8=</DigestValue></Reference></SignedInfo><SignatureValue>rMKfBBWdof2AkGjSLszJ8dpMlMJzTJYuTRkmwXJ5438jV0PkuiW2eMC28DYVeIwzeHIWsqR4cfE5lZ6jeLWdbCQxlEQysmASso9jlm899u2fjnu7HIf3WOlOJG1S2qbRB4Vp9embxf/vp8P+VcCNSPvV+cc/I4iEqRoA2PUQaVQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>1oM/aR9d4WARj4c62NZhvQQUNKWYYnwm0PbHR6ixoL1sv+CnrEjTJZFUZaMW76vU9Pi/PxQrGLgi5Ufy/skTAPaRgqmQgwCv7oP1mJ177Ls70OihIlBoMSjs/GLFTrBXOOX3WT1pSQm1vhbauYJWBhnRBLlCjPiDexQvsou8GeE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="9ff8a05ed4ca83597127eb262efbf737ae2d8956d177dc0bd747dcd6812ee317" Description="" Url=""><as:assemblyIdentity name="ScoobyDoo.exe" version="1.0.0.0" publicKeyToken="53b78a14a5e9011c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-L36DMGL\User</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>nD+QIrSjuTs8RNBzVJ3UydeioTlgYwlRkH1eREBe9Z0=</DigestValue></Reference></SignedInfo><SignatureValue>JkJ9JxnGDQz5VJkhSXwOSSRKS1k1f/8S69YifT2nhHM0Kl1/6lzYDdr+Prf4dO0PcwE3pj6LONr4a/bE2e1prW1hjaAcIx70OP7PnRDMHAdoX7i0cfiwhTNW5vkDRz+GP3BVvF9uv186/z3TMvI8WKcAUYAevaCb3HtppMbEIco=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>1oM/aR9d4WARj4c62NZhvQQUNKWYYnwm0PbHR6ixoL1sv+CnrEjTJZFUZaMW76vU9Pi/PxQrGLgi5Ufy/skTAPaRgqmQgwCv7oP1mJ177Ls70OihIlBoMSjs/GLFTrBXOOX3WT1pSQm1vhbauYJWBhnRBLlCjPiDexQvsou8GeE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB6TCCAVKgAwIBAgIQE3TLeGUYwJBGwG/NvBJk5zANBgkqhkiG9w0BAQsFADAzMTEwLwYDVQQDHigARABFAFMASwBUAE8AUAAtAEwAMwA2AEQATQBHAEwAXABVAHMAZQByMB4XDTI0MDUyMzEwNDkzNFoXDTI1MDUyMzE2NDkzNFowMzExMC8GA1UEAx4oAEQARQBTAEsAVABPAFAALQBMADMANgBEAE0ARwBMAFwAVQBzAGUAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1oM/aR9d4WARj4c62NZhvQQUNKWYYnwm0PbHR6ixoL1sv+CnrEjTJZFUZaMW76vU9Pi/PxQrGLgi5Ufy/skTAPaRgqmQgwCv7oP1mJ177Ls70OihIlBoMSjs/GLFTrBXOOX3WT1pSQm1vhbauYJWBhnRBLlCjPiDexQvsou8GeECAwEAATANBgkqhkiG9w0BAQsFAAOBgQCHWlBDeSvhGmkMHJo3ShNIJLuMY55s5BYGiBqjFlH9OBYi39uriBZuMLXVGZMYb/3e77iRqulrpdXcnSXv99kXTds8AuPJjKTmIaeH+hIe3qFw5SlmOPdevfXNEJko6IA/axeeLwMQ7efBsJNVqVD+yI13bGJwlKVVua3BGpOiFA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
