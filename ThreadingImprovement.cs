@@ -200,34 +200,3 @@ class TestingThreading
     }
 }
 
-public class CPUThreadsTesting
-{
-    static void _Main()
-    {
-        //Starts measurements for all algthms 
-        Stopwatch totalStopwatch = Stopwatch.StartNew();
-        
-        // Create an instance of MyCustomRandom
-        MyCustomRandom customRandom = new MyCustomRandom(Environment.TickCount, 1, 1013904223);
-        // Call InitializeThreadedArray method
-        customRandom.InitializeThreadedArray();
-
-        if (customRandom.randomArray == null)
-        {
-            Console.WriteLine("Array was not initialized.");
-            return;
-        }
-
-        TestingThreading testingThreading = new TestingThreading(customRandom.randomArray);
-        try
-        {
-            testingThreading.ThreadedArraySum(2);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Exception: " + e.Message);
-        }
-        totalStopwatch.Stop();
-        Console.WriteLine($"Total execution time: {totalStopwatch.ElapsedMilliseconds} ms");
-    }
-}
