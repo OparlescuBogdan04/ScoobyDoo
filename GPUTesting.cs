@@ -1,99 +1,128 @@
-
 using System;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Threading;
-using Emgu.CV;
-using Emgu.CV.Structure;
-using Emgu.CV.Util;
+using CUDAfy.NET;
+using CUDAfy.NET.Compilers;
+using System.Diagnostics;
 
-class RandomImageGenerator{
-    public enum{
-        Random,
-        Directory
-    }
-    public Image GenerateRandomImage(int width, int height, GenerationMethod method, string directoryPath = null, int numImages = 1)
+namespace GPUTesting
+{
+    class RandomImagesGenerator
     {
-        Image img;
-        if(method == GenerationMethod.Random)
+        private Random _random;
+        private ImageFormat[] _formats;
+
+        public RandomImagesGenerator()
         {
-            img = GenerateRandomImage(width, height);
-        }
-        else if(method == GenerateRandomImage.Directory)
-        {
-            img = GenerateRandomImageFromDirectory(directoryPath, numImages);
-        }
-        else{
-            throw new ArgumentException("Invalid generation method specified.");
-        }
-        return img;
-    }
-    private Image GenerateRandomImage(int width, int height)
-    {
-        Image img = new Bitmap(width, height);
-        Graphics g = Graphics.FromImage(img);
-        Random rand = new Random();
-        for(int x = 0; x < width; x++)
-        {
-            for(int y = 0; y < height; y++)
+            _random = new Random();
+            _formats = new ImageFormat[]
             {
-                g.FillRectangle(new SolidBrush(Color.FromArgb(rand.Next(256), rand.Next(256), rand.Next(256))), x, y, 1, 1);
+                ImageFormat.Bmp,
+                ImageFormat.Gif,
+                ImageFormat.Jpeg,
+                ImageFormat.Png,
+                ImageFormat.Tiff
+            };
+        }
+
+        public void GenerateRandomImage(string filePath)
+        {
+            Console.WriteLine("Select the image format to generate:");
+            for (int index = 0; index < _formats.Length; index++)
+            {
+                Console.WriteLine($"{index + 1}. {_formats[index].ToString()}");
             }
-        }
-        g.Dispose();
-        return img;
-    }
-    private Image GetRandomImageFromDirectory(string directoryPath, int numImages)
-    {
-        if(!Directory.Exists(directoryPath))
-        {
-            throw new DirectoryNotFoundException("Directory not found.");
-        }
-        string[] imageFiles = Directory.GetFiles(directoryPath, "*.jpg", SearchOption.TopDirectoryOnly).Concat(Directory.GetFiles(directoryPath, "*.jpeg", SearchOption.TopDirectoryOnly)).Concat(Directory.GetFiles(directoryPath, "*.png", SearchOption.TopDirectoryOnly)).ToArray();
-        if(imageFiles.Length == 0)
-        {
-            throw new FileNotFoundException("No image files found in directory.");
-        }
-        Image[] images = new Image[imageFiles.Length];
-        for(int index = 0; index < imageFiles.Length; index++)
-        {
-            images[index] = Image.FromFile(imageFiles[index]);
-        }
-        Image img;
-        if(numImages == 1)
-        {
-            img = images[new Random().Next(0, imageFiles.Length)];
-        }
-        else{
-            Image[] randomImages = new Image[numImages];
-            int count = 0;
-            while(count < numImages)
+            int formatChoice = int.Parse(Console.ReadLine());
+            ImageFormat selectedFormat = _formats[formatChoice - 1];
+
+            using (Bitmap image = new Bitmap(500, 500))
             {
-                int index = new Random().Next(0, imageFiles.Length);
-                if(!randomImages.Contains(images[index]))
+                using (Graphics graphics = Graphics.FromImage(image))
                 {
-                  randomImages[count] = images[index];
-                  count++;
+
+                    GPUGPU gpu = CudafyHost.GetDevice(CudafyModes.Target, CudafyModes.DeviceId);
+                    //Alocate memory for GPU for the image
+                    int width = 500;
+                    int height = 500;
+                    int imageSize = width * height * 4;
+                    byte[] imageBytes = new  byte[imageSize];
+                    GCHandle handle = GCHandle.Alloc(imageBytes, GC GCHandleType.Pinned);
+                    IntPtr imagePtr = handle.AddrOfPinnedObject();
+                    //Cuda kernel that generates random images
+                    string kernelCode = @"__global__ void GenerateRandomImage(byte* image, int width, int height)
+                    {
+                        int x = blockIdx.x * blockDim.x + threadIdx.x;
+                        int y = blockIdx.y * blockDim.y + threadIdx.y;
+                        if (x < width && y < height)
+                        {
+                            int idx = (y * width * 4) + (x * 4);
+                            image[idx] = (byte)rand() % 256;
+                            image[idx + 1] = (byte)rand() % 256;
+                            image[idx + 2] = (byte)rand() % 256;
+                            image[idx + 3] = 255; // Alpha channel
+                        }
+                    }
+                    ";
+                    CudafyModule km = CudafyModule.TryDeserialize(kernelCode);
+                    gpu.LoadModule(km);
+                    //Launch Cuda kernel
+                    int blockSize = 16;
+                    int gridSize = (width + blockSize - 1) / blockSize;
+                    gpu.Launch(new int[] { gridSize, gridSize }, new int[] { blockSize, blockSize }, "GenerateRandomImage", imagePtr, width, height);
+                    //Copy the image generated from gpu to cpu
+                    gpu.CopyToHost(imageBytes, imagePtr, imageSize);
+                    //Save the image to disk
+                    using(Bitmap gpuImage = new Bitmap(width, height, PixelFormat.Format32bppArgb))
+                    {
+                        BitmapData bitmapData = gpuImage.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.WriteOnly, PixelFormat.Format32bppArgb);
+                        Marshal.Copy(imageBytes, 0, bitmapData.Scan0, imageBytes.Length);
+                        gpuImage.UnlockBits(bitmapData);
+                        string fileExtension = GetFileExtension(selectedFormat);
+                        string fullPath = Path.Combine(filePath, $"image.{fileExtension}");
+                        gpuImage.Save(fullPath, selectedFormat);
+                    }
                 }
             }
-            img = CombineImages(randomImages);
         }
-        return img;
-    }
-    private Image CombineImages(Image[] images)
-    {
-        int width = images.Sum(i => i.Width);
-        int height = images.Max(i => i.Height);
-        Bitmap bitmap = new Bitmap(width, height);
-        Graphics g = Graphics.FromImage(bitmap);
-        int x = 0;
-        foreach(Image image in images)
+
+        private Color GetRandomColor()
         {
-            g.DrawImage(image, x, 0, image.Width, image.Height);
-            x += image.Width;
+            return Color.FromArgb(_random.Next(0, 256), _random.Next(0, 256), _random.Next(0, 256));
         }
-        g.Dispose();
-        return bitmap;
+
+        private Pen GetRandomPen()
+        {
+            return new Pen(GetRandomColor(), _random.Next(1, 5));
+        }
+
+        private string GetFileExtension(ImageFormat format)
+        {
+            switch (format)
+            {
+                case ImageFormat.Bmp:
+                    return "bmp";
+                case ImageFormat.Gif:
+                    return "gif";
+                case ImageFormat.Jpeg:
+                    return "jpg";
+                case ImageFormat.Png:
+                    return "png";
+                case ImageFormat.Tiff:
+                    return "tiff";
+                default:
+                    throw new ArgumentException("Unsupported image format", nameof(format));
+            }
+        }
+    }
+    public class GPUTesting{
+        public void ____GPUTesting()
+        {
+            RandomImagesGenerator generator = new RandomImagesGenerator();
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            //Give the path of the directory you want to save the images
+            generator.GenerateRandomImage(@"C:\Users\popescurobert\Desktop\C#");
+            stopwatch.Stop();
+            Console.WriteLine($"GPU image generation took {stopwatch.ElapsedMilliseconds} ms");
+        }
     }
 }
